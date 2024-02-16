@@ -1,0 +1,4 @@
+/Users/timur/Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Users/timur/Applications/CLion.app/Contents/bin/ninja/mac/x64/ninja -G Ninja -S /Users/timur/Documents/vscode/ОП_2СЕМ/lab7 -B /Users/timur/Documents/vscode/ОП_2СЕМ/lab7/cmake-build-debug
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/timur/Documents/vscode/ОП_2СЕМ/lab7/cmake-build-debug

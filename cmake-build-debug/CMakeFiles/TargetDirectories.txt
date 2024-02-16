@@ -1,0 +1,3 @@
+/Users/timur/Documents/vscode/ОП_2СЕМ/lab7/cmake-build-debug/CMakeFiles/lab7.dir
+/Users/timur/Documents/vscode/ОП_2СЕМ/lab7/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/timur/Documents/vscode/ОП_2СЕМ/lab7/cmake-build-debug/CMakeFiles/rebuild_cache.dir
