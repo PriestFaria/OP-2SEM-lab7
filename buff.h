@@ -8,11 +8,12 @@ class Circ_Buffer {
 private:
     unsigned int buff_size;
     unsigned int capacity;
-    T *buff;
+
     T *first;
     T *last;
 public:
 
+    T *buff;
     class Iterator {
     private:
         T *item;
@@ -87,7 +88,6 @@ public:
     unsigned int size();
 };
 
-#include "buff.h"
 
 template<typename T>
 Circ_Buffer<T>::Circ_Buffer(unsigned int capacity) : capacity(capacity) {
@@ -149,13 +149,15 @@ void Circ_Buffer<T>::pop_back() {
     Iterator it_end = end();
     if (it_begin == it_end && size() == 0)
         return;
-    if (&(*it_end) == buff + 1) {
+    if (it_end.getPosition() == 0) {
         last = buff + capacity - 1;
     } else {
-        last--;
+        last = &*(it_end - 1);
     }
     buff_size--;
 }
+
+
 
 template<typename T>
 void Circ_Buffer<T>::push_back(const T &elem) {
@@ -276,42 +278,39 @@ typename Circ_Buffer<T>::Iterator& Circ_Buffer<T>::Iterator::operator-=(std::ptr
 template<typename T>
 std::ptrdiff_t Circ_Buffer<T>::Iterator::operator-(const Circ_Buffer<T>::Iterator &iter) {
     if (position >= iter.position) {
-        return position - iter.position;
+        return std::ptrdiff_t(position) - std::ptrdiff_t(iter.position);
     } else {
-        return capacity + position - iter.position;
+        return std::ptrdiff_t(capacity) + std::ptrdiff_t(position) - std::ptrdiff_t(iter.position);
     }
 }
 
-
 template<typename T>
-bool Circ_Buffer<T>::Iterator::operator==(const Circ_Buffer::Iterator &iter)const {
-    return item == iter.item;
+bool Circ_Buffer<T>::Iterator::operator==(const Circ_Buffer::Iterator &iter) const {
+    return position == iter.position;
 }
 
 template<typename T>
 bool Circ_Buffer<T>::Iterator::operator!=(const Circ_Buffer::Iterator &iter) const {
-    return item != iter.item;
+    return position != iter.position;
 }
-
 
 template<typename T>
 bool Circ_Buffer<T>::Iterator::operator>(const Circ_Buffer::Iterator &iter) const {
     return position > iter.position;
 }
 
-
 template<typename T>
-bool Circ_Buffer<T>::Iterator::operator>=(const Circ_Buffer::Iterator &iter) const{
+bool Circ_Buffer<T>::Iterator::operator>=(const Circ_Buffer::Iterator &iter) const {
     return position >= iter.position;
 }
 
 template<typename T>
-bool Circ_Buffer<T>::Iterator::operator<(const Circ_Buffer::Iterator &iter) const{
+bool Circ_Buffer<T>::Iterator::operator<(const Circ_Buffer::Iterator &iter) const {
     return position < iter.position;
 }
 
 template<typename T>
-bool Circ_Buffer<T>::Iterator::operator<=(const Circ_Buffer::Iterator &iter) const{
+bool Circ_Buffer<T>::Iterator::operator<=(const Circ_Buffer::Iterator &iter) const {
     return position <= iter.position;
 }
 
