@@ -8,8 +8,9 @@ int main() {
     circ_buff.push_back(100);
     circ_buff.push_front(4);
     circ_buff.push_front(5);
-    circ_buff.pop_front();
-    circ_buff.pop_back();
+    circ_buff.add(circ_buff.begin() , 1000000);
+    std::sort(circ_buff.begin(), circ_buff.end());
+    circ_buff.remove(circ_buff.begin()+1);
     for(auto i{circ_buff.begin()}; i != circ_buff.end(); ++i){
         std::cout << *i << " ";
     }

@@ -69,6 +69,10 @@ public:
             }
         };
 
+        unsigned int getPosition() {
+            return position;
+        }
+
         Iterator &operator--() {
             if (position == 0) {
                 return *this;
@@ -203,11 +207,43 @@ public:
         capacity = new_capacity;
     };
 
-    void add(const Iterator &iter, T &value) {
-
+    void add(Iterator iter, T value) {
+        if (iter == end()) return;
+        if (buff_size >= capacity) {
+            for (unsigned int i = last - 1; i > iter.getPosition(); i--) {
+                buff[i + 1] = buff[i];
+            }
+            buff[iter.getPosition() + 1] = buff[iter.getPosition()];
+        } else {
+            for (unsigned int i = last; i > iter.getPosition(); i--) {
+                buff[i + 1] = buff[i];
+            }
+            buff[iter.getPosition() + 1] = buff[iter.getPosition()];
+            buff_size++;
+            if (last != capacity) {
+                last++;
+            }
+        }
+        buff[iter.getPosition()] = value;
     };
 
-    void remove(const Iterator &iter);
+    void remove(Iterator iter){
+        if(iter.getPosition()>=last+1)
+            return;
+        if (buff_size == 0) {
+            return;
+        }
+        if(iter == begin()){
+            pop_front();
+        }else{
+            buff_size--;
+            for (unsigned int i = iter.getPosition() + 1; i <= last; i++) {
+                buff[i - 1] = buff[i];
+            }
+            last--;
+        }
+
+    };
 
     Iterator begin() const {
         return Iterator(buff, capacity, 0);
@@ -217,9 +253,17 @@ public:
         return Iterator(buff + last, capacity, last);
     }
 
-    Iterator &operator[](unsigned int idx) const {
-        return Iterator(buff + idx, capacity, last);
+    T &operator[](unsigned int idx) const {
+        return buff[idx];
     };
+
+    T &getFirst() {
+        return buff[first];
+    }
+
+    T &getLast() {
+        return buff[last];
+    }
 
     unsigned int size() {
         return buff_size;
