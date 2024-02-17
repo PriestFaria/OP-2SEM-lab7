@@ -4,6 +4,6 @@ project(lab7)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(lab7 main.cpp
-        buff.h
+        buff.cpp
         Iterator.cpp
         Circ_Buffer.cpp)

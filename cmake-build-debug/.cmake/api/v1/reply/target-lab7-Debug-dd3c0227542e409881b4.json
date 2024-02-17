@@ -50,6 +50,7 @@
 			"sourceIndexes" : 
 			[
 				0,
+				1,
 				2,
 				3
 			]
@@ -85,15 +86,9 @@
 			"sourceIndexes" : 
 			[
 				0,
+				1,
 				2,
 				3
-			]
-		},
-		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
-				1
 			]
 		}
 	],
@@ -107,8 +102,9 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "buff.h",
-			"sourceGroupIndex" : 1
+			"compileGroupIndex" : 0,
+			"path" : "buff.cpp",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,

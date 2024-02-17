@@ -1,40 +1,26 @@
 #include <iostream>
-#include "buff.h"
-
+#include <algorithm>
+#include "buff.cpp"
 int main() {
-    Circ_Buffer<int> circ_buff(11);
-    circ_buff.push_front(2);
+    Circ_Buffer<int> circ_buff(3);
+    circ_buff.push_front(909);
+    circ_buff.push_back(1223);
+    circ_buff.push_back(100);
     circ_buff.push_front(4);
-    circ_buff.push_front(3);
-    circ_buff.push_front(12);
-    circ_buff.push_front(22);
-    circ_buff.push_front(6);
-    circ_buff.push_front(64);
-    circ_buff.push_front(2);
-    circ_buff.push_front(64);
-    circ_buff.push_front(1);
-    circ_buff.push_front(-123);
-
-    std::cout << "Original sequence: ";
-    for (auto iter{circ_buff.begin()}; iter != circ_buff.end(); ++iter)
-        std::cout << *iter << " ";
-
-    std::cout << "\n\nBefore sorting with std::sort: ";
-    for (auto iter{circ_buff.begin()}; iter != circ_buff.end(); ++iter)
-        std::cout << *iter << " ";
-
-    std::sort(circ_buff.begin(), circ_buff.end());
-
-    std::cout << "\n\nAfter sorting with std::sort: ";
-    for (auto iter{circ_buff.begin()}; iter != circ_buff.end(); ++iter)
-        std::cout << *iter << " ";
-
-    Circ_Buffer<int>::Iterator a = std::find(circ_buff.begin(), circ_buff.end(), 64);
-    ++a;
-    ++a;
-    ++a;
-    ++a;
-
+    circ_buff.push_front(5);
+    circ_buff.pop_front();
+    circ_buff.pop_back();
+    for(auto i{circ_buff.begin()}; i != circ_buff.end(); ++i){
+        std::cout << *i << " ";
+    }
+//    std::cout << "\n";
+//    for(int i = 0; i < 4; i++){
+//        std::cout << " " << circ_buff.buff[i] ;
+//    }
+    std::cout << "\n";
+    circ_buff.change_capacity(3);
+    for(auto i{circ_buff.begin()}; i != circ_buff.end(); ++i){
+        std::cout << *i << " ";
+    }
     return 0;
 }
-//нужно всегда выделять одну свободную ячейку
