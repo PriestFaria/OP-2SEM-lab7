@@ -51,25 +51,25 @@ build cmake_object_order_depends_target_lab7: phony || CMakeFiles/lab7.dir
 
 build CMakeFiles/lab7.dir/main.cpp.o: CXX_COMPILER__lab7_unscanned_Debug /Users/timur/Documents/vscode/ОП_2СЕМ/lab7/main.cpp || cmake_object_order_depends_target_lab7
   DEP_FILE = CMakeFiles/lab7.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/lab7.dir
   OBJECT_FILE_DIR = CMakeFiles/lab7.dir
 
 build CMakeFiles/lab7.dir/buff.cpp.o: CXX_COMPILER__lab7_unscanned_Debug /Users/timur/Documents/vscode/ОП_2СЕМ/lab7/buff.cpp || cmake_object_order_depends_target_lab7
   DEP_FILE = CMakeFiles/lab7.dir/buff.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/lab7.dir
   OBJECT_FILE_DIR = CMakeFiles/lab7.dir
 
 build CMakeFiles/lab7.dir/Iterator.cpp.o: CXX_COMPILER__lab7_unscanned_Debug /Users/timur/Documents/vscode/ОП_2СЕМ/lab7/Iterator.cpp || cmake_object_order_depends_target_lab7
   DEP_FILE = CMakeFiles/lab7.dir/Iterator.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/lab7.dir
   OBJECT_FILE_DIR = CMakeFiles/lab7.dir
 
 build CMakeFiles/lab7.dir/Circ_Buffer.cpp.o: CXX_COMPILER__lab7_unscanned_Debug /Users/timur/Documents/vscode/ОП_2СЕМ/lab7/Circ_Buffer.cpp || cmake_object_order_depends_target_lab7
   DEP_FILE = CMakeFiles/lab7.dir/Circ_Buffer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/lab7.dir
   OBJECT_FILE_DIR = CMakeFiles/lab7.dir
 
